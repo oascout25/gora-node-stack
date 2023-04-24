@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Shut down existing Goracle Container
-if [ "$(docker ps -q -f name=goracle-nr)" ]; then
-    docker stop goracle-nr
-fi
-
 # Extract the algod.token
 ALGOD_TOKEN=$(cat /algod/data/algod.token)
 
