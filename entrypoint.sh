@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 5
+
 # Extract the algod.token
 ALGOD_TOKEN=$(cat /algod/data/algod.token)
 
