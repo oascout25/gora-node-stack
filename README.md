@@ -9,7 +9,7 @@ Docker: You will need to have Docker installed on your system. You can download 
 
 Docker Compose: Install Docker Compose following the instructions here: https://docs.docker.com/compose/install/
 
-Generate a new seed phrase for the participation node. You can use the Algorand Wallet, Algorand CLI tools, or a third-party tool like MyAlgo Wallet (https://wallet.myalgo.com/) to generate a new Algorand wallet. Store the seed phrase and public key safely, as you'll need them in the next steps.
+Generate a new seed phrase for the participation node. You can use the Algorand Wallet, Algorand CLI tools, or a third-party tool like Pera Wallet (https://web.perawallet.app) to generate a new Algorand wallet. Store the seed phrase and public key safely, as you'll need them in the next steps.
 
 Important: DO NOT use this wallet for any other purpose, as the seed phrase is not secure when used in a Docker container.
 
@@ -35,7 +35,7 @@ In the terminal, navigate to the directory containing the docker-compose.yml fil
 
 This command will download the necessary images and create the required volumes, networks, and containers.
 
-Register the public key of the participation node to your Goracle Node by visiting https://testnet-app.goracle.io/nodes and following the instructions.
+Register the public key of the participation node to your Goracle Node by visiting https://testnet-app.goracle.io/nodes following the instructions.
 
 To monitor the logs of your Goracle Node, run:
 ```docker-compose logs -f goracle-node```
