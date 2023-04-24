@@ -34,7 +34,7 @@ while true; do
     break
   else
     echo "Node is still catching up. Last round: $LAST_ROUND, Catchup time: $formatted_catchup_time"
-    sleep 60
+    sleep 10
   fi
 done
 
