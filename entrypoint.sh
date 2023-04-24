@@ -42,4 +42,5 @@ while true; do
 done
 
 # Start Goracle Node Runner
-/usr/bin/node --trace-uncaught ./node_runner.js
+# Moving to command: in docker-compose.yml
+# /usr/bin/node --trace-uncaught ./node_runner.js
