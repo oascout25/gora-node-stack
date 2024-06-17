@@ -1,8 +1,8 @@
-# Goracle Node Stack
-Containerized Goracle node and Algorand Node for easy deployment.
+# Gora Node Stack
+Containerized Gora node and Algorand Node for easy deployment.
 
-# Goracle Node Stack Deployment Guide
-This guide will walk you through the process of deploying your own Goracle Node using Docker Compose. Make sure you have Docker and Docker Compose installed on your system before proceeding.
+# Gora Node Stack Deployment Guide
+This guide will walk you through deploying your Gora Node using Docker Compose. Before proceeding, make sure you have Docker and Docker Compose installed on your system.
 
 ## Prerequisites
 Docker: You will need to have Docker installed on your system. You can download Docker from the official website: https://www.docker.com/get-started
@@ -13,14 +13,14 @@ Generate a new seed phrase for the participation node. You can use the Algorand 
 
 Important: DO NOT use this wallet for any other purpose, as the seed phrase is not secure when used in a Docker container.
 
-## Deploying the Goracle Node
-Clone or download the Goracle Node repository: https://github.com/oascout25/goracle-node
+## Deploying the Gora Node
+Clone or download the Gora Node repository: https://github.com/oascout25/gora-node
 
 Navigate to the directory containing the docker-compose.yml file.
 
 Open the docker-compose.yml file with your preferred text editor.
 
-Update the environment variables under the goracle-node service:
+Update the environment variables under the gora-node service:
 
 Replace new_seed_phrase_for_participation_node with the seed phrase generated for the participation node in the PARTICIPATION_SEED_PHRASE variable.
 
@@ -35,16 +35,16 @@ In the terminal, navigate to the directory containing the docker-compose.yml fil
 
 This command will download the necessary images and create the required volumes, networks, and containers.
 
-Register the public key of the participation node to your Goracle Node by visiting https://testnet-app.goracle.io/nodes following the instructions.
+Register the public key of the participation node to your Gora Node by visiting https://app.gora.io/nodes and following the instructions.
 
-To monitor the logs of your Goracle Node, run:
-```docker-compose logs -f goracle-node```
+To monitor the logs of your Gora Node, run the following:
+```docker-compose logs -f gora-node```
 
-To monitor the logs of your Algorand Testnet Node, run:
-```docker-compose logs -f algorand-testnet-node```
+To monitor the logs of your Algorand Node, run:
+```docker-compose logs -f algorand-node```
 
-## Stopping the Goracle Node
-To stop the Goracle Node and Algorand Testnet Node, run:
+## Stopping the Gora Node
+To stop the Gora Node and Algorand Testnet Node, run:
 ```docker-compose down```
 
-This command will stop and remove the containers but will preserve the volumes and networks for future use.
+This command will stop and remove the containers but preserve the volumes and networks for future use.
