@@ -3,7 +3,7 @@ version: '3.8'
 
 services:
   gora-node:
-    image: oascout25/goracle-node
+    image: oascout25/gora-node
     logging:
       driver: local
       options:

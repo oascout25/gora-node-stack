@@ -1,11 +1,11 @@
 # Base image
-FROM public.ecr.aws/g4c3r1u3/gora-nr:latest-staging
+FROM public.ecr.aws/g4c3r1u3/gora-nr:v1.1.49
 
 # Set working directory
 WORKDIR /opt/gora/node_runner
 
-# Install jq
-RUN apt-get update && apt-get install -y jq
+## Install jq
+#RUN apt-get update && apt-get install -y jq
 
 # Download the Gora CLI binary and make it executable
 #RUN curl -L -o goracle  https://download.gora.io/latest-release/linux/gora
