@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  algorand-testnet-node:
+  algorand-node:
     image: algorand/algod:latest
     logging:
       driver: local
@@ -9,18 +9,18 @@ services:
         max-size: "10m"
         max-file: "3"
     environment:
-      - NETWORK=testnet
+      - NETWORK=mainnet
       - FAST_CATCHUP=1
-      - TELEMETRY_NAME=my-testnet-node
+      - TELEMETRY_NAME=my-algorand-node
     volumes:
       - algorand-data:/algod/data/
     ports:
       - "4190:8080"
       - "4191:7833"
     networks:
-      goracle:
+      gora:
 
-  goracle-node:
+  gora-node:
     image: oascout25/goracle-node
     logging:
       driver: local
@@ -28,7 +28,7 @@ services:
         max-size: "10m"
         max-file: "3"
     environment:
-      - ALGORAND_NODE_IP=algorand-testnet-node
+      - ALGORAND_NODE_IP=algorand-node
       # You will need to generate a new wallet to be used by the participation node.
       # Enter the seed phrase here, and register the public key to your node here: https://testnet-app.goracle.io/nodes
       # DO NOT USE THIS WALLET FOR ANY OTHER PURPOSE, AS THE SEED PHRASE IS NOT SECURE.
@@ -43,7 +43,7 @@ services:
     networks:
       - goracle
     depends_on:
-      - algorand-testnet-node
+      - algorand-node
   
 networks:
   goracle:
@@ -52,4 +52,4 @@ networks:
 
 volumes:
   algorand-data:
-  goracle:
+  gora:
