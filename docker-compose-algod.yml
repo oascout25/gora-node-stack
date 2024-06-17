@@ -18,7 +18,7 @@ services:
       - "4190:8080"
       - "4191:7833"
     networks:
-      gora:
+      - gora
 
   gora-node:
     image: oascout25/goracle-node
@@ -30,7 +30,7 @@ services:
     environment:
       - ALGORAND_NODE_IP=algorand-node
       # You will need to generate a new wallet to be used by the participation node.
-      # Enter the seed phrase here, and register the public key to your node here: https://testnet-app.goracle.io/nodes
+      # Enter the seed phrase here, and register the public key to your node here: https://app.gora.io/nodes
       # DO NOT USE THIS WALLET FOR ANY OTHER PURPOSE, AS THE SEED PHRASE IS NOT SECURE.
       - PARTICIPATION_SEED_PHRASE=new_seed_phrase_for_participation_node
       # Enter your main wallet's public address here.
