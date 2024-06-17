@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y jq
 #RUN chmod u+x ./gora
 
 # Download entrypoint.sh from GitHub
-ADD https://raw.githubusercontent.com/oascout25/gora-stack/main/entrypoint.sh /opt/gora/node_runner/entrypoint.sh
+ADD https://raw.githubusercontent.com/oascout25/gora-node-stack/main/entrypoint.sh /opt/gora/node_runner/entrypoint.sh
 RUN chmod +x /opt/gora/node_runner/entrypoint.sh
 
 # Set the entrypoint to run the script
