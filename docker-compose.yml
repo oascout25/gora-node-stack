@@ -1,0 +1,36 @@
+
+version: '3.8'
+
+services:
+  gora-node:
+    image: oascout25/goracle-node
+    logging:
+      driver: local
+      options:
+        max-size: "10m"
+        max-file: "3"
+    environment:
+      - ALGORAND_NODE_IP=algorand-node
+      # You will need to generate a new wallet to be used by the participation node.
+      # Enter the seed phrase here, and register the public key to your node here: https://app.gora.io/nodes
+      # DO NOT USE THIS WALLET FOR ANY OTHER PURPOSE, AS THE SEED PHRASE IS NOT SECURE.
+      - PARTICIPATION_SEED_PHRASE=new_seed_phrase_for_participation_node
+      # Enter your main wallet's public address here.
+      # DO NOT ENTER THE SEED PHRASE FOR YOUR MAIN WALLET IT WILL COMPROMISE ITS SECURITY.
+      - MAIN_ADDRESS_PUBLIC_KEY=your_public_algorand_address
+    volumes:
+      - algorand-data:/algod/data
+      - goracle:/root/
+      - ./entrypoint.sh:/home/goracle/entrypoint.sh
+    networks:
+      - gora
+    depends_on:
+      - algorand-node
+  
+networks:
+  gora:
+    external: true
+    attachable: true
+
+volumes:
+  gora:
