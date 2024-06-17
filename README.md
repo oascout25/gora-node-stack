@@ -14,7 +14,7 @@ Generate a new seed phrase for the participation node. You can use the Algorand 
 Important: DO NOT use this wallet for any other purpose, as the seed phrase is not secure when used in a Docker container.
 
 ## Deploying the Gora Node
-Clone or download the Gora Node repository: https://github.com/oascout25/gora-node
+Clone or download the Gora Node repository: https://github.com/oascout25/gora-node-stack
 
 Navigate to the directory containing the docker-compose.yml file.
 
